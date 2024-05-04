@@ -8,7 +8,7 @@ from tensorflow.keras.preprocessing.text import Tokenizer
 app = Flask(__name__)
 
 # Load the pre-trained model
-model = load_model('models/mental_health_model.h5')
+model = load_model('trained_model/mental_health_model.h5')
 
 # Load the tokenizer
 tokenizer = Tokenizer()
