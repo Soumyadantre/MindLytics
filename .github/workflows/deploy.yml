@@ -1,0 +1,37 @@
+name: Deploy Flask Application
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt
+      
+      # Optionally, include steps to run tests here
+      
+      - name: Set up Environment Variables
+        run: |
+          echo "FLASK_APP=app.py" >> $GITHUB_ENV
+          echo "FLASK_ENV=production" >> $GITHUB_ENV
+          # Add other environment variables as needed
+      
+      - name: Deploy Flask Application
+        run: |
+          flask run --host=0.0.0.0
+      
+      # Optionally, include post-deployment actions here
