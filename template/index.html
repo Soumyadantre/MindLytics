@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Prediction</title>
+</head>
+<body>
+    <h1>Mental Health Prediction</h1>
+    <form action="/predict" method="post">
+        {% for question in questions %}
+        <label>{{ question }}</label><br>
+        <input type="radio" name="{{ question }}" value="Yes"> Yes
+        <input type="radio" name="{{ question }}" value="No"> No<br><br>
+        {% endfor %}
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>
