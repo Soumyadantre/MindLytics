@@ -1,0 +1,8 @@
+- name: Set up Python
+  uses: actions/setup-python@v2
+  with:
+    python-version: '3.x'  # Specify the desired Python version
+- name: Install distutils
+  run: |
+    python -m pip install distutils
+
