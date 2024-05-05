@@ -57,4 +57,4 @@ model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=
 model.fit(question_padded, answer_encoded, epochs=10, batch_size=32)
 
 # Save the trained model to an HDF5 file
-model.save('models/mental_health_model.h5')
+model.save('trained_model/mental_health_model.h5')
