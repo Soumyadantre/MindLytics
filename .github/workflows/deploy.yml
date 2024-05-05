@@ -22,8 +22,6 @@ jobs:
         run: |
           pip install -r requirements.txt
       
-      # Optionally, include steps to run tests here
-      
       - name: Set up Environment Variables
         run: |
           echo "FLASK_APP=app.py" >> $GITHUB_ENV
